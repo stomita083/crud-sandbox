@@ -19,11 +19,15 @@ class TeamService(private val teamRepository: TeamRepository) {
 
     fun get(teamId: Long): Team {
         log.info("add team with teamId: $teamId")
-        return teamRepository.findById(teamId).orElseThrow()
+        //return teamRepository.findById(teamId).orElseThrow()
+        // TODO
+        return Team(null, "", "", 0)
     }
     
     fun exists(teamId: Long): Boolean {
-        return teamRepository.existsById(teamId)
+        //return teamRepository.existsById(teamId)
+        // TODO
+        return true
     }
 
     fun create(request: CreateTeamRequest): Team {
@@ -32,10 +36,13 @@ class TeamService(private val teamRepository: TeamRepository) {
             name = request.name,
             type = request.type
         )
-        return teamRepository.save(team)
+        //return teamRepository.save(team)
+        // TODO
+        return Team(null, "", "", 0)
     }
 
     fun delete(teamId: Long) {
-        return teamRepository.deleteById(teamId)
+        //return teamRepository.deleteById(teamId)
+        // TODO
     }
 }

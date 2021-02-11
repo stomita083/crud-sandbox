@@ -20,3 +20,6 @@ cd docker && docker-compose down
 you can check via swagger-ui
 
 http://localhost:8080/swagger-ui.html
+
+### jooq
+[GradleでJOOQを使ってみた](https://qiita.com/Kakky/items/4635ae4303eb0965d935)
