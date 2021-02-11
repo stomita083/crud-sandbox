@@ -24,7 +24,7 @@ class MemberController(private val memberService: MemberService) {
 
     @GetMapping
     fun list(
-    ): List<Member> {
+    ): MutableIterable<Member> {
         return memberService.list()
     }
 

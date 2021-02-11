@@ -1,14 +1,16 @@
 package com.sora.data.crudsandbox.domain
 
+import lombok.Data
+import org.springframework.data.annotation.Id
+import org.springframework.data.annotation.Version
+import org.springframework.data.relational.core.mapping.MappedCollection
 import java.io.Serializable
-import javax.persistence.*
 import javax.validation.constraints.NotNull
 
-@Entity
+@Data
 data class Team(
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val teamId: Long? = null,
 
     val name: String,
@@ -18,7 +20,7 @@ data class Team(
     @Version @NotNull val version: Int = 0
 
 ) : Serializable {
-
-    @OneToMany(mappedBy = "teamId", cascade = [CascadeType.ALL])
+    
+    @MappedCollection(idColumn="team_id", keyColumn="team_id")
     var members: MutableList<Member> = mutableListOf()
 }

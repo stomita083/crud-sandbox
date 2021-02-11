@@ -22,7 +22,7 @@ class TeamController(private val teamService: TeamService) {
 
     @GetMapping
     fun list(
-    ): List<Team> {
+    ): MutableIterable<Team> {
         return teamService.list()
     }
 

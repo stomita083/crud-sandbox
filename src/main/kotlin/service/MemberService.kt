@@ -3,8 +3,8 @@ package com.sora.data.crudsandbox.service
 import com.sora.data.crudsandbox.controller.CreateMemberRequest
 import com.sora.data.crudsandbox.domain.Member
 import com.sora.data.crudsandbox.domain.MemberRepository
-import javassist.NotFoundException
 import org.springframework.stereotype.Service
+import java.lang.RuntimeException
 
 @Service
 class MemberService(
@@ -17,7 +17,7 @@ class MemberService(
     }
 
     fun list(
-    ): List<Member> {
+    ): MutableIterable<Member> {
         return memberRepository.findAll()
     }
 
@@ -29,7 +29,7 @@ class MemberService(
 
         if (!teamService.exists(request.teamId)) {
             log.error("target team is not exists. teamId: ${request.teamId}")
-            throw NotFoundException("target team is not exists")
+            throw RuntimeException("target team is not exists")
         }
 
         val member = Member(

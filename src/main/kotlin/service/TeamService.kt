@@ -13,7 +13,7 @@ class TeamService(private val teamRepository: TeamRepository) {
     }
 
     fun list(
-    ): List<Team> {
+    ): MutableIterable<Team> {
         return teamRepository.findAll()
     }
 

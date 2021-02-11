@@ -1,14 +1,15 @@
 package com.sora.data.crudsandbox.domain
 
+import lombok.Data
+import org.springframework.data.annotation.Id
+import org.springframework.data.annotation.Version
 import java.io.Serializable
-import javax.persistence.*
 import javax.validation.constraints.NotNull
 
-@Entity
+@Data
 data class Member(
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val memberId: Long? = null,
 
     val firstName: String,
