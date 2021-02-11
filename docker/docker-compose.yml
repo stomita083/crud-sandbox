@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  test-db:
+    container_name: test-db
+    build:
+      context: ./test-db
+    ports:
+      - '23306:3306'
+    volumes:
+      #- test-db-data:/var/lib/mysql
+      - .:/var/www/html
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Tokyo

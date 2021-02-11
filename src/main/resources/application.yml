@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: crud-sandbox
+  datasource:
+    url: jdbc:log4jdbc:mysql://localhost:23306/app?autoReconnect=true&useSSL=false
+    username: app
+    password: app
+    initialization-mode: always
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+# hibernate logging
+#logging:
+#  level:
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql: TRACE
+#    org.springframework.orm.jpa: DEBUG
