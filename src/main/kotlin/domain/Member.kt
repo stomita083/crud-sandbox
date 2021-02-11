@@ -2,24 +2,22 @@ package com.sora.data.crudsandbox.domain
 
 import java.io.Serializable
 import javax.persistence.*
+import javax.validation.constraints.NotNull
 
 @Entity
 data class Member(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val memberId: Long,
+    val memberId: Long? = null,
 
     val firstName: String,
 
     val lastName: String,
 
-    //@ManyToOne
-    //@JoinColumn(name = "teamId", referencedColumnName = "teamId")
-    //val team: Team,
     val teamId: Long,
 
-    @Version
-    val version: Int
+    @Version @NotNull val version: Int = 0
+
 ) : Serializable {
 }

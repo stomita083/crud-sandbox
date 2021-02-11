@@ -16,9 +16,7 @@ cd docker && docker-compose up -d
 cd docker && docker-compose down
 ```
 
-### API endpoints
-http://localhost:8080/teams
-http://localhost:8080/teams/1
+### API document
+you can check via swagger-ui
 
-http://localhost:8080/members
-http://localhost:8080/members/1
+http://localhost:8080/swagger-ui.html
