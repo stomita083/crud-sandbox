@@ -28,3 +28,9 @@ http://localhost:8080/swagger-ui.html
 
 ### jooq
 [GradleでJOOQを使ってみた](https://qiita.com/Kakky/items/4635ae4303eb0965d935)
+
+jooqの場合。下記コマンドを実行してエンティティの生成を行ってください。
+
+```
+./gradlew :generateTablesJooqSchemaSource
+```
