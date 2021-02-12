@@ -28,7 +28,6 @@ class SwaggerConfig {
      */
     @Bean
     fun docket(): Docket {
-        var tagIndex = 0
         return Docket(DocumentationType.SWAGGER_2)
             .apiInfo(
                 ApiInfoBuilder()
@@ -40,8 +39,8 @@ class SwaggerConfig {
             .consumes(setOf("application/json"))
             .produces(setOf("application/json"))
             .tags(
-                Tag(TAG_TEAM, "チーム", tagIndex++),
-                Tag(TAG_MEMBER, "メンバー", tagIndex++),
+                Tag(TAG_TEAM, "チーム", 1),
+                Tag(TAG_MEMBER, "メンバー", 2),
             )
             .useDefaultResponseMessages(false)
             .select()
