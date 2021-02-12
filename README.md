@@ -25,3 +25,12 @@ cd docker && docker-compose down
 you can check via swagger-ui
 
 http://localhost:8080/swagger-ui.html
+
+### Appendix
+spring-boot-starter-data-jdbcとspring-boot-starter-data-jpa2つとも有効になっていると起動時にエラーが出る
+
+もしspring-data-jdbcを使うとなるとjpaはbos-buildから各基盤での指定に切り離す必要がありそう
+
+```
+Parameter 0 of constructor in com.sora.data.crudsandbox.service.MemberService required a bean of type 'com.sora.data.crudsandbox.domain.MemberRepository' that could not be found.
+```
