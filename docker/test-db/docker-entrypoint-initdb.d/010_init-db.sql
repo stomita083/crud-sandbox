@@ -1,15 +1,10 @@
 CREATE DATABASE IF NOT EXISTS `app`;
 
 CREATE USER 'app'@'%' IDENTIFIED BY 'app';
-
 GRANT ALL ON `app`.* TO 'app'@'%';
 
--- Flywayが起動時に「performance_schema.user_variables_by_thread 」を参照しようとしてエラーになるので、SELECT権限を付与する。
-GRANT SELECT ON performance_schema.user_variables_by_thread TO 'app'@'%';
-
-
--- テーブルが重複しないよう存在チェック、あれば削除します
 use app;
+-- テーブルが重複しないよう存在チェック、あれば削除します
 DROP TABLE IF EXISTS MEMBER;
 DROP TABLE IF EXISTS TEAM;
 
@@ -37,3 +32,8 @@ ALTER TABLE MEMBER
 	ON UPDATE RESTRICT
 	ON DELETE RESTRICT
 ;
+
+-- INSERT
+INSERT INTO TEAM VALUES (1, 'BARCELONA', 'SPORTS', 0);
+INSERT INTO MEMBER VALUES (1, 'Sora', 'Tomita', 0, 1);
+INSERT INTO MEMBER VALUES (2, 'Hiromi', 'Tomita', 0, 1);
