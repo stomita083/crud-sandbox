@@ -94,6 +94,8 @@ jooq {
         jooqRuntime "org.jooq:jooq-meta:3.11.9"
         jooqRuntime "org.jooq:jooq:3.11.9"
         jooqRuntime "mysql:mysql-connector-java"
+        //jooqRuntime "org.jooq:jooq-meta-extensions:3.11.9"
+        
         // ↓追加
         jooqRuntime "javax.xml.bind:jaxb-api:2.3.0"
         jooqRuntime "javax.activation:javax.activation-api:1.2.0"
@@ -136,6 +138,7 @@ jooq {
             database {
                 //対象とするデータベースを表すクラス名(後述)
                 name = 'org.jooq.meta.mysql.MySQLDatabase'
+                //name = 'org.jooq.meta.extensions.jpa.JPADatabase'
                 inputSchema = 'app'
                 includes = '.*'
                 excludes = ''

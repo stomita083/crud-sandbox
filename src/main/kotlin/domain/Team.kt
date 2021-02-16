@@ -5,6 +5,7 @@ import java.io.Serializable
 import javax.validation.constraints.NotNull
 
 @Data
+//@Entity
 data class Team(
 
 //    @Id
@@ -15,7 +16,7 @@ data class Team(
 
     val type: String,
 
-    //@Version 
+    //@Version
     @NotNull val version: Int = 0
 
 ) : Serializable {

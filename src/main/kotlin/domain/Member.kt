@@ -1,11 +1,11 @@
 package com.sora.data.crudsandbox.domain
 
 import lombok.Data
-import lombok.NoArgsConstructor
 import java.io.Serializable
 import javax.validation.constraints.NotNull
 
 @Data
+//@Entity
 data class Member(
 
 //    @Id
@@ -18,7 +18,7 @@ data class Member(
 
     val teamId: Long,
 
-//    @Version 
+    //@Version
     @NotNull val version: Int = 0
 
 ) : Serializable {

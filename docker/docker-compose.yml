@@ -8,9 +8,10 @@ services:
     ports:
       - '23306:3306'
     volumes:
-      #- test-db-data:/var/lib/mysql
-      - .:/test_db
-      #- .:/var/www/html
+      - test-db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       TZ: Asia/Tokyo
+
+volumes:
+  test-db-data:

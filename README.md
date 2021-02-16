@@ -34,3 +34,6 @@ jooqの場合。下記コマンドを実行してエンティティの生成を�
 ```
 ./gradlew :generateTablesJooqSchemaSource
 ```
+
+#### 課題
+* 親テーブル(TEAM)から子テーブル(MEMBER)の取得がうまく出来ない
